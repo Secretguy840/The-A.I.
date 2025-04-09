@@ -1,0 +1,35 @@
+import tkinter as tk
+import webbrowser
+
+# Function to open the link in a browser
+def open_link(url):
+    webbrowser.open(url)
+
+# Set up the main window
+root = tk.Tk()
+root.title("AI Tools Presentation")
+root.geometry("500x400")  # Size of the window
+
+# Label to introduce the AI tools
+label = tk.Label(root, text="Click the links below to explore various AI tools:", font=("Helvetica", 14))
+label.pack(pady=10)
+
+# List of links and their display names
+ai_tools = [
+    ("DeepSeek", "https://chat.deepseek.com/"),
+    ("ChatGPT", "https://chatgpt.com/"),
+    ("MidJourney", "https://www.midjourney.com/home"),
+    ("Leonardo AI", "https://leonardo.ai/"),
+    ("DreamStudio", "https://beta.dreamstudio.ai/generate"),
+    ("RunwayML", "https://runwayml.com/"),
+    ("Hailuo AI Video", "https://hailuoai.video/"),
+    ("Kling AI", "https://pro.klingai.com/global/dev"),
+]
+
+# Create a button for each AI tool
+for name, url in ai_tools:
+    button = tk.Button(root, text=name, font=("Helvetica", 12), command=lambda url=url: open_link(url))
+    button.pack(pady=5)
+
+# Start the main loop to display the GUI
+root.mainloop()
